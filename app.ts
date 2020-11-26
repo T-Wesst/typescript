@@ -28,7 +28,8 @@ const person = {
 // tuple does not allow more than two elements
 // person.role = [0, 'admin', 'user'];
 
-let favoriteActivity: string[];
+// avoid any because takes away all advantages of TypeScript === vanilla JS
+let favoriteActivity: any[];
 favoriteActivity = ['sports'];
 
 console.log(person.name);

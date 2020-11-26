@@ -12,3 +12,4 @@
 
 - Tuple: defines fixed length and fixed type (array)
 - Enum: automatically enumerated global constant identifier
+- any: any kind of value, no specific type assignment
