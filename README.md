@@ -11,3 +11,4 @@
 ## TypeScript Types
 
 - Tuple: defines fixed length and fixed type (array)
+- Enum: automatically enumerated global constant identifier
