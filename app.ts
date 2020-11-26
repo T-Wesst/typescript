@@ -1,12 +1,20 @@
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-  const person = {
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  // tuple
+  role: [number, string];
+} = {
   name: 'tyroo',
   age: 28,
-  hobbies: ['gaming', 'skateboarding']
+  hobbies: ['gaming', 'skateboarding'],
+  role: [2, 'author']
 }
+// person.role.push('admin'); not enforced by tuple
+// person.role[1] = 10;
+
+// tuple does not allow more than two elements
+person.role = [0, 'admin', 'user'];
 
 let favoriteActivity: string[];
 favoriteActivity = ['sports'];
