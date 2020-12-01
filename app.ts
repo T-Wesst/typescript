@@ -1,44 +1,15 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   // tuple
-//   role: [number, string];
-// } = {
-//   name: 'tyroo',
-//   age: 28,
-//   hobbies: ['gaming', 'skateboarding'],
-//   role: [2, 'author']
-// }
-
-// defaults starts at 0, can modify to strings
-enum Role { ADMIN, READ_ONLY = 5, AUTHOR = 'Author'};
-
-const person = {
-  name: 'tyroo',
-  age: 28,
-  hobbies: ['gaming', 'skateboarding'],
-  role: Role.ADMIN
+function combine(input1: number | string, input2: number | string){
+ let result;
+  if(typeof input1 === 'number' && typeof input2 === 'number'){
+    result = input1 + input2;
+ } else {
+   result = input1.toString() + input2.toString();
+ }
+  return result;
 }
 
+const combineAges = combine(28, 27);
+console.log(combineAges);
 
-// person.role.push('admin'); not enforced by tuple
-// person.role[1] = 10;
-
-// tuple does not allow more than two elements
-// person.role = [0, 'admin', 'user'];
-
-// avoid any because takes away all advantages of TypeScript === vanilla JS
-let favoriteActivity: any[];
-favoriteActivity = ['sports'];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies){
-  console.log(hobby.toUpperCase()) // TypeScript inference: hobby string
-  // console.log(hobby.map()) !! error
-}
-
-if(person.role === Role.ADMIN){
-  console.log('admin');
-}
+const combineNames = combine('tyroo', 'helen');
+console.log(combineNames);
