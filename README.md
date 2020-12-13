@@ -14,3 +14,4 @@
 - Enum: automatically enumerated global constant identifier
 - any: any kind of value, no specific type assignment
 - Union: describes a value that can be one of several types
+- Literal: conrete sub-type of a collective type (string, boolean, number). literal types allow an exact value which a string, number, or boolean must hav
