@@ -14,5 +14,5 @@
 - Enum: automatically enumerated global constant identifier
 - any: any kind of value, no specific type assignment
 - Union: describes a value that can be one of several types
-- Literal: conrete sub-type of a collective type (string, boolean, number). literal types allow an exact value which a string, number, or boolean must hav
-- Type Alias - Custom: creates new name for a type. similar to interfaces but can name primitives, unions, tuples, and any other ype written by hand.
+- Literal: concrete sub-type of a collective type (string, boolean, number). literal types allow an exact value which a string, number, or boolean must hav
+- Custom Alias Types: creates new name for a type. similar to interfaces but can name primitives, unions, tuples, and any other ype written by hand.
