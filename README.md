@@ -16,3 +16,5 @@
 - Union: describes a value that can be one of several types
 - Literal: concrete sub-type of a collective type (string, boolean, number). literal types allow an exact value which a string, number, or boolean must hav
 - Custom Alias Types: creates new name for a type. similar to interfaces but can name primitives, unions, tuples, and any other ype written by hand.
+- Object Alias Types: can be used to create your own object type. not limited to storing union types, ability to create complex objects.
+- Function Return Types & Void: the absence of any type at all where a function does not return a value

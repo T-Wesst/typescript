@@ -1,43 +1,14 @@
-type Combinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text';
-
-
-
-type User = {name: string, age: number};
-const u1: User = {name: 'tyroo', age: 28};
-
-function greet(user: User){
-  console.log(`hello ${user.name}`);
+// inferred type: number
+function add(n1: number, n2: number): number {
+  return n1 + n2;
 }
-
-function isOlder(user: User, checkAge: number){
-  return checkAge > user.age;
+// void return type
+function printResult(num: number): void {
+  console.log('result: ' + num);
 }
-
-
-
-
-
-function combine(input1: Combinable, input2: Combinable, resultType: ConversionDescriptor){
- let result;
-  if(typeof input1 === 'number' && typeof input2 === 'number'|| resultType === 'as-number'){
-    result = +input1 + +input2;
- } else {
-   result = input1.toString() + input2.toString();
- }
- return result;
-//   if(resultType === 'as-number'){
-//     return parseFloat(result);
-//   } else {
-//     return result.toString();
-//   }
+// undefined  type
+function printResults(num: number): undefined {
+  console.log('result: ' + num);
+  return;
 }
-
-const combineAges = combine(30, 26, 'as-number');
-console.log(combineAges);
-
-const combineStringAges = combine('30', '26', 'as-number');
-console.log(combineStringAges);
-
-const combineNames = combine('tyroo', 'helen', 'as-text');
-console.log(combineNames);
+printResult(add(5, 12));
