@@ -19,3 +19,4 @@
 - Object Alias Types: can be used to create your own object type. not limited to storing union types, ability to create complex objects.
 - Function Return Types & Void: the absence of any type at all where a function does not return a value
 - Functions as Types: describe which type of function specifically to use with expected values/parameters
+- Unknown: any value can be stored similar to the any type, however, the type of the value must be checked in order to be reassigned.
