@@ -66,5 +66,11 @@
     /* Advanced Options */
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
-  }
+  },
+  // path to files to be excluded during compilation
+  "exclude": ["node_modules"],
+  // path to files to be included during compilation
+  "include": [],
+  // path to individual files on small projects
+  "files": []
 }
