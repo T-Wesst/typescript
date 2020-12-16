@@ -17,7 +17,7 @@ console.log(activeHobbies);
 
 // Spread Operator Objects
 const person = {
-  name: 'tyroo',
+  fName: 'tyroo',
   age: 28
 };
 
@@ -33,3 +33,14 @@ const add = (...numbers: number[]) => {
 
 const addedNumbers = add(5,4,3,2,1);
 console.log(addedNumbers);
+
+// Array Destructuring
+const hobby1 = hobbies[0];
+const hobby2 = hobbies[1];
+const [a, b, ...rest] = hobbies;
+console.log(a,b, rest);
+// Object Destructuring
+const {fName, age } = person;
+console.log(fName, age);
+// alias rename property names
+const {fName:userName, age:userAge } = person;
