@@ -7,7 +7,11 @@ class Person {
     this.age = a;
     this.gender = g;
   }
+  describe(this:Person){
+    console.log(`${this.name} is ${this.age} years old`);
+  }
 }
 
 const tyroo = new Person('Tyroo', 28, 'male');
-console.log(tyroo);
+console.log(tyroo); 
+tyroo.describe();
