@@ -1,17 +1,28 @@
-class Person {
-  name:string;
-  age:number;
-  gender:string;
-  constructor(n:string, a:number, g:string){
+class Department {
+  // keyword is the default behavior makes properties accessible outside the class
+  public name:string;
+  // keyword private makes property only accessible within the class
+  private employees: string[] = [];
+
+  constructor(n:string){
     this.name = n;
-    this.age = a;
-    this.gender = g;
   }
-  describe(this:Person){
-    console.log(`${this.name} is ${this.age} years old`);
+  describe(this:Department){
+    console.log(`${this.name}`);
+  }
+
+  addEmployee(employee:string){
+    this.employees.push(employee);
+  }
+  printEmployeeInfo(){
+    console.log(this.employees.length);
+    console.log(this.employees);
   }
 }
 
-const tyroo = new Person('Tyroo', 28, 'male');
-console.log(tyroo); 
-tyroo.describe();
+const accounting = new Department('Accounting');
+accounting.addEmployee('Tyroo');
+accounting.addEmployee('Helen');
+accounting.printEmployeeInfo();
+ 
+accounting.describe();
