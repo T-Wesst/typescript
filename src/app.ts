@@ -1,14 +1,13 @@
 class Department {
-  // keyword is the default behavior makes properties accessible outside the class
-  public name:string;
-  // keyword private makes property only accessible within the class
+  // private id:string;
+  // private name:string;
   private employees: string[] = [];
 
-  constructor(n:string){
-    this.name = n;
+  constructor(public name:string, private id:string){
+    // this.name = n;
   }
   describe(this:Department){
-    console.log(`${this.name}`);
+    console.log(`${this.name}: ${this.id}`);
   }
 
   addEmployee(employee:string){
@@ -20,7 +19,7 @@ class Department {
   }
 }
 
-const accounting = new Department('Accounting');
+const accounting = new Department('Accounting', '001');
 accounting.addEmployee('Tyroo');
 accounting.addEmployee('Helen');
 accounting.printEmployeeInfo();
