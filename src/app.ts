@@ -31,6 +31,7 @@ IT.describe();
 console.log(IT);
 
 class Accounting extends Department {
+  static fiscalYear = 2021;
   private lastReport: string;
   // getters must return something
   get mostRecentReport(){
@@ -50,6 +51,10 @@ class Accounting extends Department {
   constructor(id: string, private reports: string[]){
     super(id, 'Accounting');
     this.lastReport = reports[0];
+  }
+
+  static createEmployee(name:string){
+    return {name};
   }
 
   addEmployee(name:string){
@@ -74,6 +79,8 @@ accounting.addEmployee('Tyroo');
 accounting.addReport('something went wrong');
 accounting.printReports();
 accounting.printEmployeeInfo();
+const employee1 = Accounting.createEmployee('Darius');
+console.log(employee1, Accounting.fiscalYear);
 
 console.log(accounting.mostRecentReport);
  
