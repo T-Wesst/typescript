@@ -1,12 +1,11 @@
-class Department {
+abstract class Department {
   // protected keyword allows properties to be accessed in inherited classes
   protected employees: string[] = [];
 
-  constructor(private readonly id:string, public name:string,){
+  constructor(protected readonly id:string, public name:string,){
   }
-  describe(this:Department){
-    console.log(`${this.id}: ${this.name}`);
-  }
+  // default method forces all subclasses to add and overwrite this method
+  abstract describe(this:Department): void;
 
   addEmployee(employee:string){
     this.employees.push(employee);
@@ -20,6 +19,9 @@ class Department {
 class ITDepartment extends Department {
   constructor(id:string, public admins: string[]){
     super(id, 'IT');
+  }
+  describe(){
+    console.log(`IT Department ID: ${this.id}`)
   }
 }
 
@@ -46,6 +48,10 @@ class Accounting extends Department {
       throw new Error('please enter a valid value')
     }
     this.addReport(value);
+  }
+
+  describe() {
+    console.log(`accounting department ID: ${this.id}`)
   }
 
   constructor(id: string, private reports: string[]){
@@ -75,10 +81,11 @@ class Accounting extends Department {
 
 const accounting = new  Accounting('D2', []);
 accounting.addEmployee('Tyroo');
-accounting.addEmployee('Tyroo');
+accounting.addEmployee('Helen');
 accounting.addReport('something went wrong');
 accounting.printReports();
 accounting.printEmployeeInfo();
+accounting.describe();
 const employee1 = Accounting.createEmployee('Darius');
 console.log(employee1, Accounting.fiscalYear);
 
